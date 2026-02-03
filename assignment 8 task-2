@@ -1,0 +1,25 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+
+names = ["nurtore", "sandiar", "miras", "yerzhan", "nursultan"]
+scores = [75, 88, 64, 92, 70]
+
+data = pd.DataFrame({
+    "Name": names,
+    "Score": scores
+})
+
+print(data)
+
+avg = data["Score"].mean()
+above_avg = (data["Score"] > avg).sum()
+print("Average score:", avg)
+print("Students above average:", above_avg)
+
+plt.bar(data["Name"], data["Score"], color='lightgreen')
+plt.axhline(avg, color='orange', linestyle='--', label=f"Average: {avg:.1f}")
+plt.title("Scores of Students")
+plt.xlabel("Name")
+plt.ylabel("Score")
+plt.legend()
+plt.show()
