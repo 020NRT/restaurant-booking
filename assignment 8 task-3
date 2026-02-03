@@ -1,0 +1,54 @@
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+
+exp = np.array([1200, 1500, 800, 950, 1300, 1100, 1000])
+day = np.arange(1, 8)
+
+data_exp = pd.DataFrame({
+    "Day": day,
+    "Expense": exp
+})
+
+print("Expenses for the week:")
+print(data_exp)
+
+avg_exp = exp.mean()
+max_exp = exp.max()
+min_exp = exp.min()
+print("Average:", avg_exp)
+print("Max:", max_exp)
+print("Min:", min_exp)
+
+plt.plot(data_exp["Day"], data_exp["Expense"], marker='o', color='blue')
+plt.title("Weekly Expenses")
+plt.xlabel("Day")
+plt.ylabel("Expense")
+plt.grid(True)
+plt.show()
+
+hours = np.array([2, 4, 3, 5, 6, 1, 3])
+marks = np.array([60, 75, 70, 80, 90, 50, 65])
+
+data_study = pd.DataFrame({
+    "Hours": hours,
+    "Marks": marks
+})
+
+print("\nStudy Hours vs Marks:")
+print(data_study)
+
+avg_marks = marks.mean()
+max_marks = marks.max()
+min_marks = marks.min()
+print("Average:", avg_marks)
+print("Max:", max_marks)
+print("Min:", min_marks)
+
+plt.scatter(data_study["Hours"], data_study["Marks"], color='green')
+plt.plot(data_study["Hours"], marks, color='lightgreen', linestyle='--')
+plt.title("Study Hours vs Marks")
+plt.xlabel("Study Hours")
+plt.ylabel("Marks")
+plt.grid(True)
+plt.show()
