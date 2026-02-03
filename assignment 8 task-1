@@ -1,0 +1,26 @@
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+
+temperatures = np.array([30, 32, 31, 29, 35, 36, 34])
+days = np.arange(1, 8)
+
+df = pd.DataFrame({
+    "Day": days,
+    "Temperature": temperatures
+})
+print(df)
+
+average_temp = temperatures.mean()
+max_temp = temperatures.max()
+min_temp = temperatures.min()
+print("Average:", average_temp)
+print("Maximum:", max_temp)
+print("Minimum:", min_temp)
+
+plt.plot(df["Day"], df["Temperature"], marker='o')
+plt.title("Temperature Over 7 Days")
+plt.xlabel("Day")
+plt.ylabel("Temperature")
+plt.grid(True)
+plt.show()
